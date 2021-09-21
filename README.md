@@ -4,6 +4,9 @@
   -Редактирование пользователя
   -Удаление пользователя
 
+Ссылка на Figma:
+  https://www.figma.com/file/BHCrl2hU6Vb4Um2PAOU15V/Test?node-id=11%3A271
+
 Стэк: 
   TypeScript
   React
