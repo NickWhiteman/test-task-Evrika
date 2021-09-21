@@ -1,0 +1,23 @@
+import { useDispatch } from "react-redux";
+import { Button } from "../../../components/button/Button";
+import { pluseIcon } from "../../../components/button/iconButton";
+import { DashboardActions } from "../../reducer";
+import './style/style.css';
+
+export const HeadDashboard: React.FunctionComponent = () => {
+  const dispatch = useDispatch();
+
+  const openModalCreateUser = () => {
+    dispatch(DashboardActions.toggleModal());
+  }
+
+  return (
+    <div className="dashboard__head">
+      <h3>Пользователи</h3>
+      <Button
+        mode='button'
+        icon={pluseIcon}
+        onChange={openModalCreateUser}>Добавить</Button>
+    </div>
+  )
+};
