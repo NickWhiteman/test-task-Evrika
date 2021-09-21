@@ -4,7 +4,7 @@ import { ITableProps } from "./types"
 import { Button } from "../button/Button"
 import { bucketIcon, pencilIcon } from "../button/iconButton"
 
-export const Table: React.FunctionComponent<Partial<ITableProps>> = React.memo(({
+export const Table: React.FC<Partial<ITableProps>> = React.memo(({
   children,
   headers,
   deleteUserHandler,

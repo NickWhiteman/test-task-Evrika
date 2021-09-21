@@ -4,9 +4,9 @@ import { data } from "../../../dashboard/const"
 import { IUser } from "../../../dashboard/types"
 import { Button } from "../../button/Button"
 import { closeIcon } from "../../button/iconButton"
-import { IModalCreateProps } from "../types"
+import { IModalProps } from "../types"
 
-export const ModalWindowCreate: React.FunctionComponent<Partial<IModalCreateProps>> = ({
+export const ModalWindowCreate: React.FunctionComponent<Partial<IModalProps>> = ({
   fields,
   keyUser,
   userId,
@@ -44,13 +44,8 @@ export const ModalWindowCreate: React.FunctionComponent<Partial<IModalCreateProp
             <div className="header__close" onChange={onClose}>{ closeIcon }</div>
           </div>
           <div className="body__content">
-          
-            <div className="body__footer">
-              <Button
-                mode='button'
-                children='Создать'
-                onChange={() => modelUser && onSubmit(modelUser, dispatch)}/>
-            </div>
+
+            
           </div>
         </div>
       </div>

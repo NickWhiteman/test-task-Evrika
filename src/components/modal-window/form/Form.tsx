@@ -16,6 +16,12 @@ export const Form = () => {
         ))
       }
       </form>
+      <div className="body__footer">
+        <Button
+          mode='button'
+          children='Создать'
+          onChange={onSubmit}/>
+      </div>
     </>
   )
 };

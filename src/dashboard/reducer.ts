@@ -6,6 +6,7 @@ const initialState: IDashboardState = {
   users: [],
   isOpenModal: false,
   data: [],
+  mode: 'createUser'
 };
 
 export const DashboardStore = createSlice({
@@ -30,6 +31,9 @@ export const DashboardStore = createSlice({
     takeData(state, { payload }:PayloadAction<IUser[]>) {
       state.data = payload;
     },
+    setMode(state, { payload }: PayloadAction<string>) {
+      state.mode = payload;
+    }
   },
 });
 

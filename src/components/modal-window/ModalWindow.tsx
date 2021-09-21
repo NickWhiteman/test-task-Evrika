@@ -22,10 +22,7 @@ export const ModalWindow: React.FunctionComponent<Partial<IModalProps>> = ({
           </div>
           <div className="body__content">
             {
-              switch(mode) {
-                case 'createUser': <Form />
-                default: <></>
-              }
+              getForm(mode)
             }
             <div className="body__footer">
               <Button

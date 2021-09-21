@@ -4,29 +4,30 @@ import { Table } from "../components/table/Table";
 import { HeadDashboard } from "./components/head-dashboard/HeadDashboard";
 import { headersTable } from "./const";
 import { useDispatch, useSelector } from "react-redux";
-import { selectorGetUsers } from "./selectors";
-import { IDashboardState, IUser } from "./types";
+import { selectorGetMode, selectorGetUsers } from "./selectors";
+import { IUser } from "./types";
 import { selectIsOpenModal } from "../components/modal-window/selectors";
-import { ModalWindowCreate } from "../components/modal-window/form/ModalWindowCreate";
+import { ModalWindow } from "../components/modal-window/form/ModalWindowCreate";
 import { keyUserModel } from "../components/modal-window/const";
 import { DashboardActions } from "./reducer";
 import { Dispatch } from "@reduxjs/toolkit";
 
-export const Dashboard: React.FunctionComponent = () => {
+export const Dashboard: React.FC = () => {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state: IDashboardState) => selectIsOpenModal(state))
-  const data = useSelector((state: IDashboardState) => selectorGetUsers(state))
+  const mode = useSelector(selectorGetMode);
+  const isOpen = useSelector(selectIsOpenModal);
+  const data = useSelector(selectorGetUsers);
 
   useEffect(() => {
     console.log('хуй');
   }, [data])
 
   const deleteUserHandler = () => {
-    <ModalWindow mode='deleteUser' />
+    dispatch(DashboardActions.setMode('deleteUser'));
   };
 
   const editionUserHandler = useCallback(() => {
-    <ModalWindow mode='updateUser' />
+    dispatch(DashboardActions.setMode('editUser'));
   }, [data]);
 
   const onSubmit = (model: IUser, dispatch: Dispatch) => {
@@ -46,7 +47,8 @@ export const Dashboard: React.FunctionComponent = () => {
         children={data}
         editionUserHandler={editionUserHandler}
         deleteUserHandler={deleteUserHandler} />
-      <ModalWindowCreate
+      <ModalWindow
+        mode={mode}
         keyUser={keyUserModel}
         fields={headersTable}
         onSubmit={onSubmit}
