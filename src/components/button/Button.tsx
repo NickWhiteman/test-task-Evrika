@@ -9,16 +9,23 @@ export const Button: React.FunctionComponent<Partial<IButtonProps>> = ({
 }) => {
   switch (mode) {
     case 'row-button':
-      return (<button
-                className='row__button'
-                type='button'
-                onChange={onChange}>{children}</button>
+      return (
+        <button
+          className='row__button'
+          type='button'>{children}</button>
       )
     case 'button':
-      return (<button
-                className='dashboard__button'
-                type='button'
-                onChange={onChange}>{icon}{children}</button>
+      return (
+        <button
+          className='dashboard__button'
+          type='button'
+          onChange={onChange}>{icon}{children}</button>
+      )
+    case 'submit':
+      return (
+        <button
+          className='form__button'
+          type='submit'></button>
       )
     default:
       return <></>;

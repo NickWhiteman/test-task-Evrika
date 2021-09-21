@@ -12,4 +12,5 @@ export interface IDashboardState {
   isOpenModal: boolean
   data: IUser[]
   mode: string
+  userId: number
 };
