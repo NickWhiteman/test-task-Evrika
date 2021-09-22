@@ -51,3 +51,9 @@ export var data = [
 export var createUser = function (model) {
     data.push(model);
 };
+export var getUserById = function (id) {
+    return data.map(function (person) {
+        if (person.id === id)
+            return person;
+    });
+};

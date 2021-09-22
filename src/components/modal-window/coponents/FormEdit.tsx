@@ -1,29 +1,24 @@
-import { IUser } from "../../../dashboard/types"
+import { IUser } from "../../../dashboard/types";
 import { getUserById } from "../../../data"
 import { Button } from "../../button/Button"
 import { IFormEditProps } from "../types"
-import { Form } from "./Form"
 
-export const FormEdit: React.FC<Partial<IFormEditProps>> = ({
+export const FormEdit: React.FunctionComponent<IFormEditProps> = ({
   fields,
-  userId,
+  userId
 }) => {
-  const modelUser = getUserById(userId);
-  const keysUser = modelUser  && Object.keys(modelUser);
-  const onSubmit = () => {
-    
-  };
+  const currentUser: IUser = getUserById(userId);
+  const keysUser = currentUser  && Object.keys(currentUser);
 
   return (
-    modelUser &&
     <>
-      <form onSubmit={}>
+      <form onSubmit={(e) => {console.log(e)}}>
       {
         fields &&
         fields.map((field, index) => (
           <div key={index + 1} className="content__inputField">
             <label>{field}</label>
-            <input type='text' value={modelUser[keysUser[index]]}></input>
+            <input type='text' value={currentUser[keysUser[index]]}></input>
           </div>
         ))
       }

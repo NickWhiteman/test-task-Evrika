@@ -1,6 +1,6 @@
 import { IUser } from "./dashboard/types";
 
-export let data = [
+export let data: IUser[] = [
   {
     id: 1,
     firstName: "Иванов",
@@ -55,6 +55,9 @@ export const createUser = (model: IUser) => {
   data.push(model);
 };
 
-export const getUserById = (id?: number) => {
-  return data.find(user => user.id === id)
+export const getUserById = (id: number) => {
+  return data.map((person) => {
+    if (person.id === id)
+      return person
+  })
 }

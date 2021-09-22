@@ -13,8 +13,12 @@ export interface IFormEditProps extends ModalEditProps {
 
 export type FormProps = ModalEditProps;
 
-export type IOptions = Pick<IModalProps, 'userId' | 'fields'>;
+export type IOptions = IFormEditProps;
 
 export type IFormOptions = {
   options: IOptions
+}
+
+export type DeleteConfirmProps = {
+  userId: number
 }

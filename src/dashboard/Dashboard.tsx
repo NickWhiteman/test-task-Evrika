@@ -6,7 +6,6 @@ import { headersTable } from "./const";
 import { useDispatch, useSelector } from "react-redux";
 import { selectorGetMode, selectorGetUsers } from "./selectors";
 import { selectIsOpenModal } from "../components/modal-window/selectors";
-import { keyUserModel } from "../components/modal-window/const";
 import { ModalWindow } from "../components/modal-window/ModalWindow";
 import { DashboardActions } from "./reducer";
 import { data } from "../data";
@@ -29,7 +28,6 @@ export const Dashboard: React.FC = () => {
         children={dataForTable}/>
       <ModalWindow
         mode={mode}
-        keyUser={keyUserModel}
         fields={headersTable}
         isOpen={isOpen}/>
     </>
