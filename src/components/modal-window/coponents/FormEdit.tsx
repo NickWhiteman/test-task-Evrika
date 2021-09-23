@@ -7,8 +7,7 @@ export const FormEdit: React.FunctionComponent<IFormEditProps> = ({
   fields,
   userId
 }) => {
-  const currentUser = getUserById(userId);
-  const keysUser = currentUser  && Object.keys(currentUser);
+  const { register, handleSubmit } = useForm();
 
   return (
     <>
@@ -29,6 +28,7 @@ export const FormEdit: React.FunctionComponent<IFormEditProps> = ({
       <div className="body__footer">
         <div className="empty"></div>
         <button
+          className='dashboard__button'
           type='submit'
           children='Обновить'></button>
       </div>
