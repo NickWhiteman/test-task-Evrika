@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectorGetMode, selectorGetUsers } from "./selectors";
 import { selectIsOpenModal } from "../components/modal-window/selectors";
 import { ModalWindow } from "../components/modal-window/ModalWindow";
+import { data } from '../data';
 import { DashboardActions } from "./reducer";
-import { data } from "../data";
 
 export const Dashboard: React.FC = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,9 @@ export const Dashboard: React.FC = () => {
   const dataForTable = useSelector(selectorGetUsers);
 
   useEffect(() => {
+    console.log('ефект работает:', mode, isOpen, dataForTable);
     dispatch(DashboardActions.getUsers(data));
-  }, [data]);
+  });
 
   return (
     <>
@@ -26,10 +27,12 @@ export const Dashboard: React.FC = () => {
       <Table
         headers={headersTable}
         children={dataForTable}/>
-      <ModalWindow
-        mode={mode}
-        fields={headersTable}
-        isOpen={isOpen}/>
+      {
+        isOpen &&
+          <ModalWindow
+            mode={mode}
+            fields={headersTable}/>
+      }
     </>
   )
 };

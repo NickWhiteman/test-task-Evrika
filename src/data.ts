@@ -60,4 +60,4 @@ export const getUserById = (id: number) => {
     if (person.id === id)
       return person
   })
-}
+};

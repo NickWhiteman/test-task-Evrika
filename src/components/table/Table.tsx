@@ -6,7 +6,7 @@ import { bucketIcon, pencilIcon } from "../button/iconButton"
 import { useDispatch } from "react-redux";
 import { DashboardActions } from "../../dashboard/reducer";
 
-export const Table: React.FC<Partial<ITableProps>> = React.memo(({
+export const Table: React.FC<ITableProps> = React.memo(({
   children,
   headers,
 }) => {
@@ -16,11 +16,13 @@ export const Table: React.FC<Partial<ITableProps>> = React.memo(({
     dispatch(DashboardActions.setMode('deleteUser'));
     dispatch(DashboardActions.deleteUserId(id));
     dispatch(DashboardActions.toggleModal());
+    console.log('deleteUserHandler работает')
   };
 
   const editionUserHandler = () => {
     dispatch(DashboardActions.setMode('editUser'));
     dispatch(DashboardActions.toggleModal());
+    console.log('editionUserHandler работает');
   };
   return (
     <table className='dashboard__table'>
@@ -47,11 +49,11 @@ export const Table: React.FC<Partial<ITableProps>> = React.memo(({
               <Button
                 mode='row-button'
                 children={pencilIcon}
-                onChange={editionUserHandler}/>
+                onClick={editionUserHandler}/>
               <Button
                 mode='row-button'
                 children={bucketIcon}
-                onChange={() => deleteUserHandler(info.id)}
+                onClick={() => deleteUserHandler(info.id)}
               />
             </td>
           </tr>

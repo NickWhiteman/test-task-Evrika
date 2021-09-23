@@ -1,7 +1,4 @@
-import { useState } from "react";
-import { IUser } from "../../../dashboard/types";
-import { data } from "../../../data";
-import { Button } from "../../button/Button";
+// import { Button } from "../../button/Button";
 import { FormProps } from "../types";
 
 export const Form: React.FunctionComponent<FormProps> = ({
@@ -10,20 +7,24 @@ export const Form: React.FunctionComponent<FormProps> = ({
   return (
     <>
       <form onSubmit={(e) => console.log(e)}>
-      {
-        fields &&
-        fields.map((field, index) => (
-          <div key={index + 1} className="content__inputField">
-            <label>{field}</label>
-            <input key={index} type='text'></input>
-          </div>
-        ))
+        {
+          fields.map((field, index) => {
+            if(field !== '')
+            return(
+              <div key={index + 1} className="content__inputField">
+                <label>{field}</label>
+                <input key={index + 1} type='text'></input>
+              </div>
+            )
+          })
       }
       </form>
       <div className="body__footer">
-        <Button
+        <div className="empty"></div>
+        {/* <Button
           mode='submit'
-          children='Создать'/>
+          children='Создать'></Button> */}
+          <button className='dashboard__button' type='submit'>Submit</button>
       </div>
     </>
   )
