@@ -8,7 +8,9 @@ export const HeadDashboard: React.FunctionComponent = () => {
   const dispatch = useDispatch();
 
   const openModalCreateUser = () => {
+    dispatch(DashboardActions.setMode('createUser'));
     dispatch(DashboardActions.toggleModal());
+    console.log('click work headDashboard')
   }
 
   return (
@@ -17,7 +19,7 @@ export const HeadDashboard: React.FunctionComponent = () => {
       <Button
         mode='button'
         icon={pluseIcon}
-        onChange={openModalCreateUser}>Добавить</Button>
+        onClick={openModalCreateUser}>Добавить</Button>
     </div>
   )
 };

@@ -1,38 +1,33 @@
-import { Form } from "./form/Form";
-import { FormEdit } from "./form/FormEdit";
+import { useDispatch } from "react-redux";
+import { DashboardActions } from "../../dashboard/reducer";
+import { closeIcon } from "../button/iconButton";
+import { getForm, headerModalName } from "./formHelper";
 import { IModalProps } from "./types"
+import './style/style.css';
 
-export const ModalWindow: React.FunctionComponent<Partial<IModalProps>> = ({
+export const ModalWindow: React.FunctionComponent<IModalProps> = ({
   mode,
-  fields,
-  keyUser?,
-  userId?,
-  isOpen,
-  onSubmit,
-  onClose,
+  userId,
 }) => {
+  const dispatch = useDispatch();
+  const options = userId ? userId : 0;
+  const onClose = (): void => {
+    dispatch(DashboardActions.toggleModal());
+  }
+
   return (
-    isOpen && 
     <>
       <div className="modal-background">
         <div className="modal__body">
           <div className="body__header">
-            <div className="header__name">{ 'Создание пользователя' }</div>
-            <div className="header__close" onChange={onClose}>{ closeIcon }</div>
+            <div className="empty"></div>
+            <div className="header__name">{headerModalName(mode)}</div>
+            <div className="header__close" onClick={onClose}>{ closeIcon }</div>
           </div>
           <div className="body__content">
             {
-              switch(mode) {
-                case 'createUser': <Form />
-                default: <></>
-              }
+              typeof mode === 'string' && getForm(mode, options)
             }
-            <div className="body__footer">
-              <Button
-                mode='button'
-                children='Создать'
-                onChange={() => modelUser && onSubmit(modelUser, dispatch)}/>
-            </div>
           </div>
         </div>
       </div>

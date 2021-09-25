@@ -30,3 +30,20 @@ $dashboardButtonBackground: #4587ED;
     font-size: 14px;
     line-height: 20px;
 }
+
+.form__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 159px;
+    height: 36px;
+    color: white;
+    background-color: $dashboardButtonBackground;
+    border: none;
+    border-radius: 8px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}

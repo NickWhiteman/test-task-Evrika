@@ -6,6 +6,8 @@ const initialState: IDashboardState = {
   users: [],
   isOpenModal: false,
   data: [],
+  mode: 'createUser',
+  userId: 0
 };
 
 export const DashboardStore = createSlice({
@@ -15,14 +17,11 @@ export const DashboardStore = createSlice({
     getUsers(state, { payload }: PayloadAction<IUser[]>) {
       state.users = payload;
     },
-    createUser(state, { payload }: PayloadAction<IUser[]>) {
+    setUsers(state, { payload }: PayloadAction<IUser[]>) {
       state.users = payload;
     },
-    updateUser(state, { payload }: PayloadAction<IUser[]>) {
-      state.users = payload;
-    },
-    deleteUser(state, { payload }: PayloadAction<IUser[]>) {
-      state.users = payload;
+    editUserId(state, { payload }: PayloadAction<number>) {
+      state.userId = payload;
     },
     toggleModal(state) {
       state.isOpenModal = !state.isOpenModal;
@@ -30,6 +29,12 @@ export const DashboardStore = createSlice({
     takeData(state, { payload }:PayloadAction<IUser[]>) {
       state.data = payload;
     },
+    setMode(state, { payload }: PayloadAction<string>) {
+      state.mode = payload;
+    },
+    deleteUserId(state, { payload }: PayloadAction<number>) {
+      state.userId = payload;
+    }
   },
 });
 

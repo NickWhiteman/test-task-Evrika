@@ -1,0 +1,103 @@
+.modal-background {
+  margin: 0 auto;
+  background-color: white;
+  position: absolute;
+  width: 608px;
+  height: 620px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.modal-background .modal__body {
+  width: 100%;
+  height: 100%;
+}
+.modal-background input {
+  background: #F9FAFC;
+  /* Blue-grey/5 */
+  border: 2px solid #EBECEF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 6px;
+  width: 480px;
+  height: 36px;
+}
+.modal-background label {
+  margin-bottom: 4px;
+  color: #818C99;
+}
+.modal-background .body__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 56px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #353D4B;
+  border-start-end-radius: 10px;
+  border-start-start-radius: 10px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 36px;
+}
+.modal-background .body__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.modal-background .header__name {
+  color: white;
+}
+.modal-background .content__inputField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 28px;
+}
+.modal-background .body__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  width: 100%;
+  background-color: #F6F7F9;
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
+}
+.modal-background .dashboard__button {
+  margin-right: 24px;
+}

@@ -3,13 +3,28 @@ import './style/style.css';
 import { ITableProps } from "./types"
 import { Button } from "../button/Button"
 import { bucketIcon, pencilIcon } from "../button/iconButton"
+import { useDispatch } from "react-redux";
+import { DashboardActions } from "../../dashboard/reducer";
 
-export const Table: React.FunctionComponent<Partial<ITableProps>> = React.memo(({
+export const Table: React.FC<ITableProps> = React.memo(({
   children,
   headers,
-  deleteUserHandler,
-  editionUserHandler
 }) => {
+  const dispatch = useDispatch();
+
+  const deleteUserHandler = (id: number) => {
+    dispatch(DashboardActions.setMode('deleteUser'));
+    dispatch(DashboardActions.deleteUserId(id));
+    dispatch(DashboardActions.toggleModal());
+    console.log('deleteUserHandler работает')
+  };
+
+  const editionUserHandler = (id: number) => {
+    dispatch(DashboardActions.editUserId(id));
+    dispatch(DashboardActions.setMode('editUser'));
+    dispatch(DashboardActions.toggleModal());
+    console.log('editionUserHandler работает');
+  };
   return (
     <table className='dashboard__table'>
       <tr className='dashboard__table__row'>
@@ -35,11 +50,11 @@ export const Table: React.FunctionComponent<Partial<ITableProps>> = React.memo((
               <Button
                 mode='row-button'
                 children={pencilIcon}
-                onChange={() => editionUserHandler(info)}/>
+                onClick={() => editionUserHandler(info.id)}/>
               <Button
                 mode='row-button'
                 children={bucketIcon}
-                onChange={deleteUserHandler}
+                onClick={() => deleteUserHandler(info.id)}
               />
             </td>
           </tr>
