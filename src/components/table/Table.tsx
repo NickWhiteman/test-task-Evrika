@@ -19,7 +19,8 @@ export const Table: React.FC<ITableProps> = React.memo(({
     console.log('deleteUserHandler работает')
   };
 
-  const editionUserHandler = () => {
+  const editionUserHandler = (id: number) => {
+    dispatch(DashboardActions.editUserId(id));
     dispatch(DashboardActions.setMode('editUser'));
     dispatch(DashboardActions.toggleModal());
     console.log('editionUserHandler работает');
@@ -49,7 +50,7 @@ export const Table: React.FC<ITableProps> = React.memo(({
               <Button
                 mode='row-button'
                 children={pencilIcon}
-                onClick={editionUserHandler}/>
+                onClick={() => editionUserHandler(info.id)}/>
               <Button
                 mode='row-button'
                 children={bucketIcon}

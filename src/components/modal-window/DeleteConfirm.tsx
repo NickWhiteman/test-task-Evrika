@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux"
 import { DashboardActions } from "../../dashboard/reducer";
 import { selectorGetUsers } from "../../dashboard/selectors"
 import { IUser } from "../../dashboard/types";
-import { deleteUserHandler } from "../../data";
 import { Button } from "../button/Button";
 import { selectDeleteId } from "./selectors";
 

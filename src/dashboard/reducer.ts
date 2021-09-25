@@ -20,6 +20,9 @@ export const DashboardStore = createSlice({
     setUsers(state, { payload }: PayloadAction<IUser[]>) {
       state.users = payload;
     },
+    editUserId(state, { payload }: PayloadAction<number>) {
+      state.userId = payload;
+    },
     toggleModal(state) {
       state.isOpenModal = !state.isOpenModal;
     },
