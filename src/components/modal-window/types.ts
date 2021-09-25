@@ -14,9 +14,9 @@ export interface IFormEditProps {
 export type FormProps = ModalEditProps;
 
 export type FormUser = {
-  firstName: string;
-  lastName: string;
-  fatherName: string;
-  email: string;
-  login: string;
+  'firstName': string;
+  'lastName': string;
+  'fatherName': string;
+  'email': string;
+  'login': string;
 }

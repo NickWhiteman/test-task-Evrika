@@ -2,8 +2,22 @@ $modalHeadColor: #353D4B;
 $backgroundFooter: #F6F7F9;
 $labelColor: #818C99;
 
+@keyframes openModal {
+    from{
+        margin-top: -100%;
+        opacity: 0;
+    } 
+    to {
+        margin-top: -20%;
+        opacity: 1;
+    } 
+}
+
 .modal-background {
-    margin: 0 auto;
+    animation-duration: .5s;
+    animation-name: openModal;
+    margin-top: -20%;
+    margin-left: 30%;
     background-color: white;
     position: absolute;
     width: 608px;
@@ -12,7 +26,6 @@ $labelColor: #818C99;
     flex-direction: column;
     border-radius: 10px;
     align-items: center;
-    justify-content: space-between;
     z-index: 1000;
 
     .modal__body {
@@ -22,7 +35,6 @@ $labelColor: #818C99;
 
     input {
         background: #F9FAFC;
-        /* Blue-grey/5 */
         border: 2px solid #EBECEF;
         box-sizing: border-box;
         border-radius: 6px;
@@ -37,7 +49,7 @@ $labelColor: #818C99;
 
     .body__header {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         height: 56px;
         align-items: center;
         background-color: $modalHeadColor;
@@ -57,6 +69,10 @@ $labelColor: #818C99;
 
     .header__name {
         color: white;
+    }
+
+    .header__close {
+        margin-right: 30px;
     }
 
     .content__inputField {

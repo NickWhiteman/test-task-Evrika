@@ -10,7 +10,7 @@ export const ModalWindow: React.FunctionComponent<IModalProps> = ({
   userId,
 }) => {
   const dispatch = useDispatch();
-  const options = userId ? userId : 0;
+  
   const onClose = (): void => {
     dispatch(DashboardActions.toggleModal());
   }
@@ -26,7 +26,7 @@ export const ModalWindow: React.FunctionComponent<IModalProps> = ({
           </div>
           <div className="body__content">
             {
-              typeof mode === 'string' && getForm(mode, options)
+              typeof mode === 'string' && getForm(mode)
             }
           </div>
         </div>

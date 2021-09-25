@@ -1,22 +1,22 @@
 import { FormComponent } from "./coponents/FormComponent";
 import { useForm } from "react-hook-form";
 import { FormUser } from "./types";
-import { Button } from "../button/Button";
+// import { Button } from "../button/Button";
 
 export const Form = () => {
   const { register, handleSubmit } = useForm<FormUser>();
 
-  const onSubmit = (data: FormUser) => {
+  const onSubmit = handleSubmit((data: FormUser) => {
     console.log(data);
-  }
+  });
 
   return (
     <>
-      <FormComponent onSubmit={handleSubmit(onSubmit)}>
+      <FormComponent onSubmit={onSubmit}>
         <div className="content__inputField">
           <label htmlFor='firstName'>Фамилия</label>
           <input
-            {...register}
+            {...register('firstName')}
             id='firstName'
             type='text'
             name='firstName' />
@@ -24,15 +24,15 @@ export const Form = () => {
         <div className="content__inputField">
           <label htmlFor='lastName'>Имя</label>
           <input
-            {...register}
+            {...register('lastName')}
             id='lastName'
             type='text'
-            name='firstName' />
+            name='lastName' />
         </div>
         <div className="content__inputField">
           <label htmlFor='fatherName'>Отчество</label>
           <input
-            {...register}
+            {...register('fatherName')}
             id='fatherName'
             type='text'
             name='fatherName' />
@@ -40,7 +40,7 @@ export const Form = () => {
         <div className="content__inputField">
           <label htmlFor='email'>Email</label>
           <input
-            {...register}
+            {...register('email')}
             id='email'
             type='text'
             name='email' />
@@ -48,17 +48,18 @@ export const Form = () => {
         <div className="content__inputField">
           <label htmlFor='login'>Логин</label>
           <input
-            {...register}
+            {...register('login')}
             id='login'
             type='text'
             name='login' />
         </div>
-        <div className="body__footer">
-          <div className="empty"></div>
-            <Button
+          <button type='submit'>Создать</button>
+        {/* <div className="body__footer">
+          <div className="empty"></div> */}
+            {/* <Button
               mode='submit'
-              children='Создать'></Button>
-        </div>
+              children='Создать'></Button> */}
+        {/* </div> */}
       </FormComponent>
     </>
   )

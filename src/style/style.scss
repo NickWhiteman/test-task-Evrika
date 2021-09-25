@@ -1,6 +1,7 @@
 $backColorPanel: #FFFFFF;
 $backColorHead: #353D4B;
 $backColorDashboard: #E5E5E5;
+$darkScreenBackground: rgba(53, 61, 75, 0.2);
 
 * {
     margin: 0;
@@ -40,5 +41,15 @@ body {
         height: 1024px;
         width: 1920px - 280px;
     };
+};
+
+.dark-screen{
+    position: absolute;
+    // pointer-events: none;
+    top: 0; left: 0;
+    width: max-content; 
+    height: max-content;
+    z-index: 1;
+    background-color: $darkScreenBackground;
 };
 
