@@ -56,8 +56,14 @@ export const createUser = (model: IUser) => {
 };
 
 export const getUserById = (id: number) => {
-  return data.map((person) => {
-    if (person.id === id)
-      return person
+  let user: IUser[] = [];
+  data.forEach((person) => {
+    if(person.id === id) user.push(person)
   })
+  return user[0];
+};
+
+export const deleteUserHandler = (id: number): IUser[] => {
+  const newData: IUser[] = data.filter(user => user.id !== id && user)
+  return newData;
 };

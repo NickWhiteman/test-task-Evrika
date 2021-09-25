@@ -1,2 +1,0 @@
-export var FormEdit = function () {
-};
