@@ -27,8 +27,8 @@ export const DeleteConfirm: React.FunctionComponent = () => {
         <h3>Удалить {`${currentUser?.firstName} ${currentUser?.lastName}`}?</h3>
       </div>
       <div className="footer__modal">
-        <Button mode='button' onClick={onClose}>Close</Button>
-        <Button mode='button' onClick={() => onDelete(userId)}>Delete</Button>
+        <Button mode='button' link='link' onClick={onClose}>Отмена</Button>
+        <Button mode='button' onClick={() => onDelete(userId)}>Удалить</Button>
       </div>
     </>
   )

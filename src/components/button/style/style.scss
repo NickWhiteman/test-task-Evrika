@@ -1,6 +1,8 @@
 $rowButtonBackground:#F6F7F9;
 $rowButtonColorIcon: rgb(133, 133, 133);
 $dashboardButtonBackground: #4587ED;
+$linkButtonBackground: rgba(228, 229, 232, 1);
+$linkTextColor: rgba(109, 120, 133, 1);
 
 .row__button {
     width: 32px;
@@ -46,4 +48,9 @@ $dashboardButtonBackground: #4587ED;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
+}
+
+.link {
+    background-color: $linkButtonBackground;
+    color: $linkTextColor;
 }

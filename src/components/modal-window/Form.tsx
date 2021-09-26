@@ -1,7 +1,7 @@
 import { FormComponent } from "./coponents/FormComponent";
 import { useForm } from "react-hook-form";
 import { FormUser } from "./types";
-// import { Button } from "../button/Button";
+import { Button } from "../button/Button";
 
 export const Form = () => {
   const { register, handleSubmit } = useForm<FormUser>();
@@ -18,48 +18,43 @@ export const Form = () => {
           <input
             {...register('firstName')}
             id='firstName'
-            type='text'
-            name='firstName' />
+            type='text'/>
         </div>
         <div className="content__inputField">
           <label htmlFor='lastName'>Имя</label>
           <input
             {...register('lastName')}
             id='lastName'
-            type='text'
-            name='lastName' />
+            type='text'/>
         </div>
         <div className="content__inputField">
           <label htmlFor='fatherName'>Отчество</label>
           <input
             {...register('fatherName')}
             id='fatherName'
-            type='text'
-            name='fatherName' />
+            type='text'/>
         </div>
         <div className="content__inputField">
           <label htmlFor='email'>Email</label>
           <input
             {...register('email')}
             id='email'
-            type='text'
-            name='email' />
+            type='text'/>
         </div>
         <div className="content__inputField">
           <label htmlFor='login'>Логин</label>
           <input
             {...register('login')}
             id='login'
-            type='text'
-            name='login' />
+            type='text'/>
         </div>
-          <button type='submit'>Создать</button>
-        {/* <div className="body__footer">
-          <div className="empty"></div> */}
-            {/* <Button
+          {/* <button type='submit'>Создать</button> */}
+        <div className="body__footer">
+          <div className="empty"></div>
+            <Button
               mode='submit'
-              children='Создать'></Button> */}
-        {/* </div> */}
+              children='Создать'></Button>
+        </div>
       </FormComponent>
     </>
   )

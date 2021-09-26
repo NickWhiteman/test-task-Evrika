@@ -30,12 +30,13 @@ body {
 .App .app__dashboard {
   margin-top: 56px;
   margin-left: 280px;
-  height: 1024px;
+  height: 990px;
   width: 1640px;
 }
 
 .dark-screen {
   position: absolute;
+  pointer-events: none;
   top: 0;
   left: 0;
   width: -webkit-max-content;
