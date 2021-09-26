@@ -5,9 +5,9 @@ interface IForm {
   onSubmit: () => void
 }
 
-export const FormComponent: React.FC<IForm> = ({children, ...props}, onSubmit) => {
+export const FormComponent: React.FC<IForm> = ({children, ...props}) => {
   return (
-    <form {...props} onSubmit={onSubmit} className='body__form' noValidate>
+    <form {...props} className='body__form' noValidate>
       {children}
     </form>
   );

@@ -1,3 +1,4 @@
+import { FormUser } from "./components/modal-window/types";
 import { IUser } from "./dashboard/types";
 
 export let data: IUser[] = [
@@ -51,8 +52,13 @@ export let data: IUser[] = [
   }
 ];
 
-export const createUser = (model: IUser) => {
+export const createUserHandler = (model: IUser) => {
   data.push(model);
+};
+
+export const newUserObject = (user: FormUser) => {
+  let newUser = { id: data.length, ...user };
+  return newUser
 };
 
 export const getUserById = (id: number) => {

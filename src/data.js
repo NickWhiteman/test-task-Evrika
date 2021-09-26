@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 export var data = [
     {
         id: 1,
@@ -48,8 +59,12 @@ export var data = [
         login: "user6"
     }
 ];
-export var createUser = function (model) {
+export var createUserHandler = function (model) {
     data.push(model);
+};
+export var newUserObject = function (user) {
+    var newUser = __assign({ id: data.length }, user);
+    return newUser;
 };
 export var getUserById = function (id) {
     var user = [];

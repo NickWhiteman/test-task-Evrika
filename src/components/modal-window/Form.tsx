@@ -2,17 +2,23 @@ import { FormComponent } from "./coponents/FormComponent";
 import { useForm } from "react-hook-form";
 import { FormUser } from "./types";
 import { Button } from "../button/Button";
+import { createUserHandler, newUserObject } from "../../data";
+import { useDispatch } from "react-redux";
+import { DashboardActions } from "../../dashboard/reducer";
 
 export const Form = () => {
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm<FormUser>();
 
-  const onSubmit = handleSubmit((data: FormUser) => {
-    console.log(data);
-  });
+  function onSubmit(data: FormUser) {
+    const newUser = newUserObject(data);
+    createUserHandler(newUser);
+    dispatch(DashboardActions.toggleModal());
+  };
 
   return (
     <>
-      <FormComponent onSubmit={onSubmit}>
+      <FormComponent onSubmit={handleSubmit(onSubmit)}>
         <div className="content__inputField">
           <label htmlFor='firstName'>Фамилия</label>
           <input
@@ -49,6 +55,7 @@ export const Form = () => {
             type='text'/>
         </div>
         <div className="body__footer">
+          {/* <button type='submit'>send</button> */}
             <Button
               mode='submit'
               children='Создать'></Button>

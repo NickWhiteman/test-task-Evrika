@@ -25,14 +25,6 @@ export const FormEdit: React.FunctionComponent = () => {
     console.log(data);
   })
 
-  useEffect(() => {
-    console.log('onSubmit: ', onSubmit);
-    console.log('userId: ', userId);
-    console.log('users: ', users);
-    console.log('currentUser: ', currentUser);
-    console.log('register: ', register);
-  });
-
   return (
     <>
       <FormComponent onSubmit={onSubmit}>

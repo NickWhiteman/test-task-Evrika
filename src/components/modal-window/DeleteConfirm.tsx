@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux"
-import { selectIsDeleteMode } from "../../componenjs/modal-window/selectors";
 import { DashboardActions } from "../../dashboard/reducer";
 import { selectorGetUsers } from "../../dashboard/selectors"
 import { IUser } from "../../dashboard/types";
