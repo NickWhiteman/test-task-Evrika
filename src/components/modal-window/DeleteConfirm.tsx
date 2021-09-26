@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
+import { selectIsDeleteMode } from "../../componenjs/modal-window/selectors";
 import { DashboardActions } from "../../dashboard/reducer";
 import { selectorGetUsers } from "../../dashboard/selectors"
 import { IUser } from "../../dashboard/types";
@@ -13,11 +14,13 @@ export const DeleteConfirm: React.FunctionComponent = () => {
 
   const onClose = () => {
     dispatch(DashboardActions.toggleModal())
+    dispatch(DashboardActions.modeDelete())
   };
 
   const onDelete = (id: number) => {
     let newUsers: IUser[] = users.filter(user => user.id !== id && user)
     dispatch(DashboardActions.setUsers(newUsers));
+    dispatch(DashboardActions.modeDelete())
     dispatch(DashboardActions.toggleModal());
   };
 

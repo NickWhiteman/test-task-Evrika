@@ -13,4 +13,5 @@ export interface IDashboardState {
   data: IUser[]
   mode: string
   userId: number
+  isDelete: boolean
 };

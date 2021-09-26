@@ -8,3 +8,6 @@ export const selectDeleteId = (state: IDashboardState) =>
 
 export const selectUserIdEdition = (state: IDashboardState) =>
   state.userId;
+
+export const selectIsDeleteMode = (state: IDashboardState) =>
+  state.isDelete;

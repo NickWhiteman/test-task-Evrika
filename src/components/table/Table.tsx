@@ -15,6 +15,7 @@ export const Table: React.FC<ITableProps> = React.memo(({
   const deleteUserHandler = (id: number) => {
     dispatch(DashboardActions.setMode('deleteUser'));
     dispatch(DashboardActions.deleteUserId(id));
+    dispatch(DashboardActions.modeDelete())
     dispatch(DashboardActions.toggleModal());
   };
 
