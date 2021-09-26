@@ -1,3 +1,4 @@
+import { FormUser } from "./components/modal-window/types";
 import { IUser } from "./dashboard/types";
 
 export let data: IUser[] = [
@@ -51,11 +52,28 @@ export let data: IUser[] = [
   }
 ];
 
-export const createUser = (model: IUser) => {
-  data.push(model);
+export const createUserHandler = (model: IUser): void => {
+  const newData = [...data, model];
+  data = newData;
+  console.log(data)
 };
 
-export const getUserById = (id: number) => {
+export const editionUserHandler = (user: FormUser, id: number): void => {
+  const editionUser: IUser = { id: id, ...user }
+  const newData: IUser[] = data.map((item) => (
+    item.id === editionUser.id
+      ? item = { ...editionUser }
+      : item
+  ));
+  data = newData;
+};
+
+export const newUserObject = (user: FormUser): IUser => {
+  let newUser: IUser = { id: (data.length + 1), ...user };
+  return newUser
+};
+
+export const getUserById = (id: number): IUser => {
   let user: IUser[] = [];
   data.forEach((person) => {
     if(person.id === id) user.push(person)

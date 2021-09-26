@@ -18,18 +18,17 @@ export const Dashboard: React.FC = () => {
 
   useEffect(() => {
     dispatch(DashboardActions.setUsers(data));
-  }, [data]);
+  }, [dispatch, data]);
 
   return (
     <>
       <HeadDashboard />
+        {
+          isOpen && <ModalWindow mode={mode}/>
+        }
       <Table
         headers={headersTable}
-        children={dataForTable}/>
-      {
-        isOpen &&
-          <ModalWindow mode={mode}/>
-      }
+        children={dataForTable} />
     </>
   )
 };

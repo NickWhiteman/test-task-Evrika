@@ -30,6 +30,21 @@ body {
 .App .app__dashboard {
   margin-top: 56px;
   margin-left: 280px;
-  height: 1024px;
+  height: 990px;
   width: 1640px;
+}
+
+.dark-screen {
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: rgba(53, 61, 75, 0.2);
 }

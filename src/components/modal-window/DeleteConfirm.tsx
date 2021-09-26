@@ -13,11 +13,13 @@ export const DeleteConfirm: React.FunctionComponent = () => {
 
   const onClose = () => {
     dispatch(DashboardActions.toggleModal())
+    dispatch(DashboardActions.modeDelete())
   };
 
   const onDelete = (id: number) => {
     let newUsers: IUser[] = users.filter(user => user.id !== id && user)
     dispatch(DashboardActions.setUsers(newUsers));
+    dispatch(DashboardActions.modeDelete())
     dispatch(DashboardActions.toggleModal());
   };
 
@@ -27,8 +29,8 @@ export const DeleteConfirm: React.FunctionComponent = () => {
         <h3>Удалить {`${currentUser?.firstName} ${currentUser?.lastName}`}?</h3>
       </div>
       <div className="footer__modal">
-        <Button mode='button' onClick={onClose}>Close</Button>
-        <Button mode='button' onClick={() => onDelete(userId)}>Delete</Button>
+        <Button mode='button' link='link' onClick={onClose}>Отмена</Button>
+        <Button mode='button' onClick={() => onDelete(userId)}>Удалить</Button>
       </div>
     </>
   )

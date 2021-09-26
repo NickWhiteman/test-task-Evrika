@@ -15,21 +15,19 @@ export const Table: React.FC<ITableProps> = React.memo(({
   const deleteUserHandler = (id: number) => {
     dispatch(DashboardActions.setMode('deleteUser'));
     dispatch(DashboardActions.deleteUserId(id));
+    dispatch(DashboardActions.modeDelete())
     dispatch(DashboardActions.toggleModal());
-    console.log('deleteUserHandler работает')
   };
 
   const editionUserHandler = (id: number) => {
-    dispatch(DashboardActions.editUserId(id));
     dispatch(DashboardActions.setMode('editUser'));
+    dispatch(DashboardActions.editUserId(id));
     dispatch(DashboardActions.toggleModal());
-    console.log('editionUserHandler работает');
   };
   return (
     <table className='dashboard__table'>
       <tr className='dashboard__table__row'>
         {
-          headers &&
           headers.map((item, index) => (
             <th
               key={index + 1}
@@ -38,7 +36,6 @@ export const Table: React.FC<ITableProps> = React.memo(({
         }
       </tr>
       {
-        children &&
         children.map((info) => (
           <tr key={info.id}>
             <td className='dashboard__table__row__itemColumn'>{info.firstName}</td>

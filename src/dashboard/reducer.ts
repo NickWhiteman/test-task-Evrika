@@ -4,10 +4,11 @@ import { IDashboardState, IUser } from './types';
 
 const initialState: IDashboardState = {
   users: [],
+  isDelete: false,
   isOpenModal: false,
   data: [],
   mode: 'createUser',
-  userId: 0
+  userId: 0,
 };
 
 export const DashboardStore = createSlice({
@@ -25,6 +26,9 @@ export const DashboardStore = createSlice({
     },
     toggleModal(state) {
       state.isOpenModal = !state.isOpenModal;
+    },
+    modeDelete(state) {
+      state.isDelete = !state.isDelete;
     },
     takeData(state, { payload }:PayloadAction<IUser[]>) {
       state.data = payload;

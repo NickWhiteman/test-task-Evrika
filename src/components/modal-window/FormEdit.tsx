@@ -1,12 +1,15 @@
 import { useForm } from "react-hook-form";
 import { FormComponent } from "./coponents/FormComponent";
 import { Button } from "../button/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {selectorGetUsers} from '../../dashboard/selectors'
 import { FormUser } from "./types";
 import { selectUserIdEdition } from "./selectors";
+import { editionUserHandler } from "../../data";
+import { DashboardActions } from "../../dashboard/reducer";
 
 export const FormEdit: React.FunctionComponent = () => {
+  const dispatch = useDispatch();
   const userId = useSelector(selectUserIdEdition)
   const users = useSelector(selectorGetUsers);
   const currentUser = users.find(user => user.id === userId);
@@ -20,9 +23,14 @@ export const FormEdit: React.FunctionComponent = () => {
     }
   });
 
+  const saveData = (data: FormUser, id: number) => {
+    editionUserHandler(data, id);
+  }
+
   const onSubmit = handleSubmit((data: FormUser) => {
-    console.log(data);
-  })
+    saveData(data, userId);
+    dispatch(DashboardActions.toggleModal());
+  });
 
   return (
     <>
@@ -30,45 +38,39 @@ export const FormEdit: React.FunctionComponent = () => {
         <div className="content__inputField">
           <label htmlFor='firstName'>Фамилия</label>
           <input
-            {...register}
+            {...register('firstName')}
             id='firstName'
-            type='text'
-            name='firstName' />
+            type='text'/>
         </div>
         <div className="content__inputField">
           <label htmlFor='lastName'>Имя</label>
           <input
-            {...register}
+            {...register('lastName')}
             id='lastName'
-            type='text'
-            name='firstName' />
+            type='text'/>
         </div>
         <div className="content__inputField">
           <label htmlFor='fatherName'>Отчество</label>
           <input
-            {...register}
+            {...register('fatherName')}
             id='fatherName'
-            type='text'
-            name='fatherName' />
+            type='text'/>
         </div>
         <div className="content__inputField">
           <label htmlFor='email'>Email</label>
           <input
-            {...register}
+            {...register('email')}
             id='email'
-            type='text'
-            name='email' />
+            type='text'/>
         </div>
         <div className="content__inputField">
           <label htmlFor='login'>Логин</label>
           <input
-            {...register}
+            {...register('login')}
             id='login'
-            type='text'
-            name='login' />
+            type='text'/>
         </div>
         <div className="body__footer">
-          <div className="empty"></div>
             <Button
               mode='submit'
               children='Обновить'></Button>

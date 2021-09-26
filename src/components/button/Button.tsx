@@ -5,6 +5,7 @@ export const Button: React.FunctionComponent<IButtonProps> = ({
   mode,
   children,
   icon,
+  link,
   onClick
 }) => {
   switch (mode) {
@@ -18,7 +19,7 @@ export const Button: React.FunctionComponent<IButtonProps> = ({
     case 'button':
       return (
         <button
-          className='dashboard__button'
+          className={`dashboard__button ${link ? link : ''}`}
           type='button'
           onClick={onClick}>{icon}{children}</button>
       )

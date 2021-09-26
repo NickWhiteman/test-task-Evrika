@@ -10,7 +10,6 @@ export const HeadDashboard: React.FunctionComponent = () => {
   const openModalCreateUser = () => {
     dispatch(DashboardActions.setMode('createUser'));
     dispatch(DashboardActions.toggleModal());
-    console.log('click work headDashboard')
   }
 
   return (
