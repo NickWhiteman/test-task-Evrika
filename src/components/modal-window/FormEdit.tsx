@@ -1,13 +1,15 @@
 import { useForm } from "react-hook-form";
 import { FormComponent } from "./coponents/FormComponent";
 import { Button } from "../button/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {selectorGetUsers} from '../../dashboard/selectors'
 import { FormUser } from "./types";
 import { selectUserIdEdition } from "./selectors";
-import { useEffect } from "react";
+import { editionUserHandler } from "../../data";
+import { DashboardActions } from "../../dashboard/reducer";
 
 export const FormEdit: React.FunctionComponent = () => {
+  const dispatch = useDispatch();
   const userId = useSelector(selectUserIdEdition)
   const users = useSelector(selectorGetUsers);
   const currentUser = users.find(user => user.id === userId);
@@ -21,9 +23,14 @@ export const FormEdit: React.FunctionComponent = () => {
     }
   });
 
+  const saveData = (data: FormUser, id: number) => {
+    editionUserHandler(data, id);
+  }
+
   const onSubmit = handleSubmit((data: FormUser) => {
-    console.log(data);
-  })
+    saveData(data, userId);
+    dispatch(DashboardActions.toggleModal());
+  });
 
   return (
     <>

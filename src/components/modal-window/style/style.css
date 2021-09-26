@@ -4,7 +4,7 @@
     opacity: 0;
   }
   to {
-    margin-top: -20%;
+    margin-top: 0;
     opacity: 1;
   }
 }
@@ -14,7 +14,7 @@
     opacity: 0;
   }
   to {
-    margin-top: -20%;
+    margin-top: 0;
     opacity: 1;
   }
 }
@@ -23,7 +23,7 @@
           animation-duration: 0.5s;
   -webkit-animation-name: openModal;
           animation-name: openModal;
-  margin-top: -20%;
+  margin-top: 0;
   margin-left: 30%;
   background-color: white;
   position: absolute;

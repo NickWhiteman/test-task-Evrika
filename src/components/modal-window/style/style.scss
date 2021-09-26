@@ -8,7 +8,7 @@ $labelColor: #818C99;
         opacity: 0;
     } 
     to {
-        margin-top: -20%;
+        margin-top: 0;
         opacity: 1;
     } 
 };
@@ -16,7 +16,7 @@ $labelColor: #818C99;
 .modal-background {
     animation-duration: .5s;
     animation-name: openModal;
-    margin-top: -20%;
+    margin-top: 0;
     margin-left: 30%;
     background-color: white;
     position: absolute;
