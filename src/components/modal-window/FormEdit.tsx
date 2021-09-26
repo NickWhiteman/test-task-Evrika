@@ -72,7 +72,6 @@ export const FormEdit: React.FunctionComponent = () => {
             type='text'/>
         </div>
         <div className="body__footer">
-          <div className="empty"></div>
             <Button
               mode='submit'
               children='Обновить'></Button>

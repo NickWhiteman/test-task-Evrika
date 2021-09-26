@@ -53,6 +53,7 @@ $labelColor: #818C99;
         justify-content: space-between;
         height: 56px;
         align-items: center;
+        font-size: 16px;
         background-color: $modalHeadColor;
         border-start-end-radius: 10px;
         border-start-start-radius: 10px;
@@ -60,6 +61,14 @@ $labelColor: #818C99;
         width: 100%;
         margin-bottom: 36px;
     };
+
+    .body__form {
+        margin-top: 10px;
+        width: 608px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .body__content {
         display: flex;
@@ -80,11 +89,8 @@ $labelColor: #818C99;
         display: flex;
         flex-direction: column;
         margin-bottom: 28px;
+        align-content: stretch;
     };
-
-    .body__content {
-        height: 600px;
-    }
 
     .footer__modal {
         display: flex;
@@ -93,25 +99,48 @@ $labelColor: #818C99;
     }
 
     .body__footer {
+        margin-top: 30px;
+        margin-right: 20;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content:right;
+        width: 608px;
         height: 60px;
-        width: 100%;
         background-color: $backgroundFooter;
         border-end-start-radius: 10px;
         border-end-end-radius: 10px;
+
+        button{
+            margin-right: 24px;
+        };
     };
 
     .dashboard__button {
         margin-right: 24px;
     };
+
+    .body__delete {
+        margin-top: 50px;
+        font-size: 16px;
+    };
+
+    .footer__modal {
+        background-color:$backgroundFooter;
+        margin-top: 60px;
+        height: 60px;
+        display: flex; 
+        justify-content: flex-end;
+        align-items: center;
+        border-end-start-radius: 10px;
+        border-end-end-radius: 10px;
+        width: 608px;
+    };
 };
 
 .delete {
     height: 284px;
-}
+};
 
 .fullHeight {
     height: 620px;
-}
+};

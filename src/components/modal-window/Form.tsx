@@ -48,9 +48,7 @@ export const Form = () => {
             id='login'
             type='text'/>
         </div>
-          {/* <button type='submit'>Создать</button> */}
         <div className="body__footer">
-          <div className="empty"></div>
             <Button
               mode='submit'
               children='Создать'></Button>

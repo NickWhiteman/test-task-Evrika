@@ -19,7 +19,7 @@ export const Button: React.FunctionComponent<IButtonProps> = ({
     case 'button':
       return (
         <button
-          className={`dashboard__button ${link}`}
+          className={`dashboard__button ${link ? link : ''}`}
           type='button'
           onClick={onClick}>{icon}{children}</button>
       )

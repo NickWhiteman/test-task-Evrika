@@ -45,11 +45,11 @@ body {
 
 .dark-screen{
     position: absolute;
+    z-index: 100;
     pointer-events: none;
     top: 0; left: 0;
     width: max-content; 
     height: max-content;
-    z-index: 1;
     background-color: $darkScreenBackground;
 };
 

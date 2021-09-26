@@ -71,12 +71,27 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 16px;
   background-color: #353D4B;
   border-start-end-radius: 10px;
   border-start-start-radius: 10px;
   position: relative;
   width: 100%;
   margin-bottom: 36px;
+}
+.modal-background .body__form {
+  margin-top: 10px;
+  width: 608px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .modal-background .body__content {
   display: -webkit-box;
@@ -107,9 +122,8 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 28px;
-}
-.modal-background .body__content {
-  height: 600px;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
 }
 .modal-background .footer__modal {
   display: -webkit-box;
@@ -123,23 +137,49 @@
           align-items: flex-end;
 }
 .modal-background .body__footer {
+  margin-top: 30px;
+  margin-right: 20;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: 608px;
   height: 60px;
-  width: 100%;
   background-color: #F6F7F9;
   border-end-start-radius: 10px;
   border-end-end-radius: 10px;
 }
+.modal-background .body__footer button {
+  margin-right: 24px;
+}
 .modal-background .dashboard__button {
   margin-right: 24px;
+}
+.modal-background .body__delete {
+  margin-top: 50px;
+  font-size: 16px;
+}
+.modal-background .footer__modal {
+  background-color: #F6F7F9;
+  margin-top: 60px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
+  width: 608px;
 }
 
 .delete {

@@ -15,7 +15,7 @@ export const headerModalName = (mode: string): string => {
   switch (mode) {
     case 'createUser': return 'Создать пользователя'
     case 'editUser': return 'Редактирование пользователя'
-    case 'deleteUser': return 'Удаление пользоватля'
+    case 'deleteUser': return 'Удаление пользователя'
     default: return ''
   }
 };
