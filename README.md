@@ -5,7 +5,7 @@
   * Удаление пользователя
 
 #### Ссылка на Figma:
-  [example site](https://www.figma.com/file/BHCrl2hU6Vb4Um2PAOU15V/Test?node-id=11%3A271)
+  [Макет задачи](https://www.figma.com/file/BHCrl2hU6Vb4Um2PAOU15V/Test?node-id=11%3A271)
 
 #### Стэк: 
   * TypeScript
